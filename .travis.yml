@@ -1,16 +1,17 @@
 os: linux
-sudo: false
 dist: trusty
 language: java
 jdk: oraclejdk8
+
+env:
+  - XATKIT-DEV=$TRAVIS_BUILD_DIR/xatkit
+  - XATKIT=$TRAVIS_BUILD_DIR/xatkit/build/bin
 cache:
   directories:
   - "~/.m2/repository"
 
 before_script:
-  - git submodule update --init --recursive
-  - bash build.sh --all --skip-tests --product
-  - bash build/bin/start-xatkit-linux.sh
+  - bash ./utils/build_run_xatkit.sh
 
 script:
 
