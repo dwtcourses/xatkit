@@ -4,7 +4,7 @@ language: java
 jdk: oraclejdk8
 
 env:
-  - XATKIT_DEV=$TRAVIS_BUILD_DIR/xatkit XATKIT=$TRAVIS_BUILD_DIR/xatkit/build/bin
+  - XATKIT_DEV=$TRAVIS_BUILD_DIR XATKIT=$TRAVIS_BUILD_DIR/build/bin
 cache:
   directories:
   - "~/.m2/repository"
