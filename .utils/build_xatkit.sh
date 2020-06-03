@@ -7,7 +7,7 @@ e() {
 main() {
 	e "Started building Xatkit"
     git submodule update --init --recursive
-    ./build.sh --all --skip-tests --product > /dev/null
+    ./build.sh --all --skip-tests --product
     e "Finished building Xatkit"
 }
 
