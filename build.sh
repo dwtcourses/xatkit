@@ -289,6 +289,8 @@ do
 	concrete_platforms=${concrete_platforms[@]//"$i"}
 done
 
+printf '\t%s\n' ${concrete_platforms[@]}
+
 for concrete_platform in $concrete_platforms
 do
 	echo "Building concrete platform $concrete_platform"
