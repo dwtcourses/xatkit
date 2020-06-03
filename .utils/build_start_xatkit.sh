@@ -7,7 +7,7 @@ e() {
 main() {
 
     pwd
-    echo $XATKIT-DEV
+    echo $XATKIT_DEV
     git submodule update --init --recursive
     ./build.sh --all --skip-tests --product
     cd build/bin
