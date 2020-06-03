@@ -10,15 +10,16 @@ cache:
     - "~/.m2/repository"
 before_install:
   - nvm install node # "node" is an alias for the latest version. we may need to install a specific version
-  - travis_wait bash .utils/build_xatkit.sh
+  - travis_wait 30 bash .utils/build_xatkit.sh
 before_script:
   - bash .utils/start_xatkit.sh
   - cd tests/greetings
   - npm install
-  - npm test
+  - sleep 15
+
 
 script:
-  è
+  - npm test
 
 after_success:
 
