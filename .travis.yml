@@ -11,7 +11,7 @@ cache:
   - "~/.m2/repository"
 
 before_script:
-  - bash ./utils/build_start_xatkit.sh
+  - bash .utils/build_start_xatkit.sh
 
 script:
 
