@@ -284,9 +284,15 @@ done
 cd $XATKIT_DEV/platforms
 concrete_platforms=$platforms_to_build
 
-for abstract_platform in ${abstract_platforms[@]}
+for abstract_platform in "${abstract_platforms[@]}"
 do
-   concrete_platforms=("${concrete_platforms[@]/$abstract_platform}")
+  for i in "${!concrete_platforms[@]}"
+  do
+    if [[ ${concrete_platforms[i]} = $abstract_platform ]]
+    then
+      unset 'concrete_platforms[i]'
+    fi
+  done
 done
 
 for concrete_platform in $concrete_platforms
