@@ -282,14 +282,8 @@ do
 done
 
 cd $XATKIT_DEV/platforms
-concrete_platforms=$platforms_to_build
 
-for i in "${abstract_platforms[@]}"
-do
-	concrete_platforms=${concrete_platforms[@]//"$i"}
-done
-
-printf '\t%s\n' ${concrete_platforms[@]}
+concrete_platforms=( "${platforms_to_build[@]/$abstract_platform}" )
 
 for concrete_platform in $concrete_platforms
 do
