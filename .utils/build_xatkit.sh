@@ -9,9 +9,6 @@ main() {
     git submodule update --init --recursive
     ./build.sh --all --skip-tests --product > /dev/null
     e "Finished building Xatkit"
-    pwd
-    cd build/bin
-    ./start-xatkit-linux.sh ../examples/GreetingsBots/GreetingsBot/GreetingsBot.properties > /dev/null
 }
 
 main
