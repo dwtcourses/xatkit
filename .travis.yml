@@ -7,8 +7,10 @@ env:
   - XATKIT_DEV=$TRAVIS_BUILD_DIR XATKIT=$TRAVIS_BUILD_DIR/build/bin
 cache:
   directories:
-  - "~/.m2/repository"
-
+    - "~/.m2/repository"
+before_install:
+  -  nvm install node # "node" is an alias for the latest version. we may need to install a specific version
+  - node --version
 before_script:
   - bash .utils/build_start_xatkit.sh
 
